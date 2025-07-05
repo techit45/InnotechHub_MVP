@@ -1,16 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "innotech-platform/frontend/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "innotech-platform/frontend/$1"
-    }
-  ],
-  "outputDirectory": "innotech-platform/frontend"
+  "buildCommand": "cd innotech-platform/frontend && npm run build",
+  "devCommand": "cd innotech-platform/frontend && npm run dev",
+  "installCommand": "cd innotech-platform/frontend && npm install"
 }
