@@ -11,11 +11,12 @@ export default function TestPage() {
     const testBackendConnection = async () => {
       try {
         // ทดสอบ health check
-        const healthResponse = await fetch('http://localhost:8000/health');
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+        const healthResponse = await fetch(`${apiUrl}/health`);
         const healthData = await healthResponse.json();
         
         // ทดสอบ root endpoint
-        const rootResponse = await fetch('http://localhost:8000/');
+        const rootResponse = await fetch(`${apiUrl}/`);
         const rootData = await rootResponse.json();
 
         if (healthData.status === 'healthy') {
@@ -63,7 +64,7 @@ export default function TestPage() {
               {backendStatus}
             </p>
             <p className="text-sm text-gray-600">
-              URL: http://localhost:8000
+              URL: {process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}
             </p>
           </div>
 
@@ -94,7 +95,7 @@ export default function TestPage() {
 
           <div className="text-center">
             <a
-              href="http://localhost:8000/docs"
+              href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/docs`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
