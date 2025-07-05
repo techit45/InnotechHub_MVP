@@ -3,7 +3,7 @@
   "name": "innotech-platform-frontend",
   "builds": [
     {
-      "src": "innotech-platform/frontend/next.config.ts",
+      "src": "innotech-platform/frontend/package.json",
       "use": "@vercel/next"
     }
   ]
