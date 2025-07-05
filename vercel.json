@@ -1,5 +1,10 @@
 {
-  "buildCommand": "cd innotech-platform/frontend && npm run build",
-  "devCommand": "cd innotech-platform/frontend && npm run dev",
-  "installCommand": "cd innotech-platform/frontend && npm install"
+  "version": 2,
+  "name": "innotech-platform-frontend",
+  "builds": [
+    {
+      "src": "innotech-platform/frontend/next.config.ts",
+      "use": "@vercel/next"
+    }
+  ]
 }
