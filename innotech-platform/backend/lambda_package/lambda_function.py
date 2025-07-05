@@ -23,9 +23,10 @@ def lambda_handler(event, context):
             return {
                 'statusCode': 200,
                 'headers': {
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'https://innotech-hub-mvp.vercel.app',
                     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
                     'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+                    'Access-Control-Allow-Credentials': 'true',
                     'Access-Control-Max-Age': '86400'
                 },
                 'body': ''
@@ -37,9 +38,10 @@ def lambda_handler(event, context):
                 'statusCode': 200,
                 'headers': {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Origin': 'https://innotech-hub-mvp.vercel.app',
                     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-                    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With'
+                    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+                    'Access-Control-Allow-Credentials': 'true'
                 },
                 'body': json.dumps({
                     'message': 'Innotech Platform API is running!',
@@ -63,7 +65,8 @@ def lambda_handler(event, context):
                 'statusCode': 200,
                 'headers': {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin': 'https://innotech-hub-mvp.vercel.app',
+                    'Access-Control-Allow-Credentials': 'true'
                 },
                 'body': json.dumps({
                     'message': f'API endpoint {path}',
