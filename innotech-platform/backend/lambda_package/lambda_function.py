@@ -31,8 +31,8 @@ def lambda_handler(event, context):
                 'body': ''
             }
         
-        # Handle health check and root paths
-        if path in ['/', '/health', '/prod', '/prod/', '/prod/health', '']:
+        # Handle health check and root paths  
+        if path in ['/', '/health', '/prod', '/prod/', '/prod/health', '', '/root']:
             return {
                 'statusCode': 200,
                 'headers': {
