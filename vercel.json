@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd innotech-platform/frontend && npm run build",
-  "outputDirectory": "innotech-platform/frontend/.next",
-  "installCommand": "cd innotech-platform/frontend && npm install",
-  "framework": "nextjs"
-}
